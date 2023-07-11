@@ -20,7 +20,7 @@ import pydotplus as pypi
 from IPython.display import Image
 
 def predict(input):
-       filename = 'https://raw.githubusercontent.com/qwinox/aml/main/loan.csv'
+       filename = 'https://raw.githubusercontent.com/humidhuman/loan_predict/main/loan.csv'
        dat = pd.read_csv(filename, sep = ',')
 
        df_encoded = dat.copy()
