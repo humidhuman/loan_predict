@@ -24,7 +24,6 @@ def predict(input):
        dat = pd.read_csv(filename, sep = ',')
 
        df_encoded = dat.copy()
-       df_encoded.Gender.value_counts()
        le = LabelEncoder()
        
        df_encoded['Gender'] = le.fit_transform(df_encoded['Gender'].values)
@@ -50,11 +49,8 @@ def predict(input):
        clf = clf.fit(X_train, y_train)
        y_pred = clf.predict(X_test)
        
-       r2 = accuracy_score(y_test, y_pred)
-       
        model = BaggingClassifier(clf)
        model.fit(X_train, y_train)
-       model.score(X_test, y_test)
 
        return model.predict(input)
 
