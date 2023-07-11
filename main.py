@@ -129,6 +129,3 @@ if button_pressed:
               
        else:
               st.subheader("В поля ввода текст данные введены неправильно")
-
-       st.write("Введённые вами данные:")
-       st.write(user_input)
