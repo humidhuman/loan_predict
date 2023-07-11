@@ -44,9 +44,6 @@ def predict(input):
        
        X_train, X_test, y_train, y_test = train_test_split(X,Y,test_size=0.1,random_state=1)
        
-       # fig, ax = plt.subplots(figsize=(20, 10))
-       # tree.plot_tree(clf, fontsize=10, filled=True, rounded=True)
-
        np.random.seed(42)
 
        clf = DecisionTreeClassifier(criterion='gini')
@@ -61,7 +58,7 @@ def predict(input):
 
        return model.predict(input)
 
-st.title("Модель предсказания возможности получения займа в банке")
+st.title("Веб-сервис для предсказания возможности получения займа в банке")
 
 text_input = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -126,6 +123,10 @@ if button_pressed:
                      st.balloons()
               else:
                      st.subheader("Модель выявила, что по какому-то из показателей вы нежелательный заёмщик")
+       
+              st.write("Введённые вами данные:")
+              st.write(user_input)
+              
        else:
               st.subheader("В поля ввода текст данные введены неправильно")
 
